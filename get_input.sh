@@ -24,7 +24,10 @@ fi
 
 if [ -f "$1/data/day$2.txt" ]; then
     echo "Input for the day already exists."
+elif [ -z "$AOC_SESSION" ]; then
+    echo "You need to set the session cookie to the environment variable AOC_SESSION."
+    exit 1
 else
     echo "Curling input."
-    # TODO: Actually get the input.
+    curl https://adventofcode.com/$1/day/$2/input --cookie "session=$AOC_SESSION" > "$1/data/day$2.txt"
 fi
