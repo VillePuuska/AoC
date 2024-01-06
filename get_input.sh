@@ -31,3 +31,10 @@ else
     echo "Curling input."
     curl https://adventofcode.com/$1/day/$2/input --cookie "session=$AOC_SESSION" > "$1/data/day$2.txt"
 fi
+
+if [ -f "$1/data/day$2_ex.txt" ]; then
+    echo "Example file for the day already exists."
+else
+    echo "Making example file."
+    touch "$1/data/day$2_ex.txt"
+fi
