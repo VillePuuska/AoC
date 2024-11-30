@@ -29,7 +29,7 @@ elif [ -z "$AOC_SESSION" ]; then
     exit 1
 else
     echo "Curling input."
-    curl -A "github.com/VillePuuska/AoC contact me at repo issues to avoid sending PII in user agent" --cookie "session=$AOC_SESSION" https://adventofcode.com/$1/day/$2/input > "$1/data/day$2.txt"
+    curl -A "github.com/VillePuuska/AoC" --cookie "session=$AOC_SESSION" https://adventofcode.com/$1/day/$2/input > "$1/data/day$2.txt"
 fi
 
 if [ -f "$1/data/day$2_ex.txt" ]; then
